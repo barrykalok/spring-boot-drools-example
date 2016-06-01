@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Jump Seat Rule Engine Demo</title>
+
+    <link href="/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/js/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="/js/dragdropfile.js" type="text/javascript"></script>
+    <script src="/js/demo.js" type="text/javascript"></script>
+</head>
+<body>
+    <div style="width: 50%; float:left; padding: 20px;">
+        <div class="panel panel-info">
+            <div class="panel-heading"><h3 class="panel-title">Candidate</h3></div>
+            <div class="panel-body" id="candidate-group">
+            </div>
+            <div class="panel-body">
+                <button id="add-condition" type="submit" class="btn btn-info pull-left">Add</button>
+                <button id="submit-condition" type="submit" class="btn btn-success pull-right">Submit</button>
+                <button id="rm-condition" type="submit" class="btn btn-warning pull-right">Clear</button>
+            </div>
+        </div>
+
+        <div id="success" class="panel panel-success">
+            <div class="panel-heading"><h3 class="panel-title">Success</h3></div>
+            <div class="panel-body"> Panel content</div>
+        </div>
+
+        <div id="fail" class="panel panel-danger">
+            <div class="panel-heading"><h3 class="panel-title">Fail</h3></div>
+            <div class="panel-body"> Panel content</div>
+        </div>
+    </div>
+
+    <div style="width: 50%; float:right; padding: 20px;">
+        <div class="panel panel-primary">
+            <div class="panel-heading"><h3 class="panel-title">Create Rule</h3></div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label for="rule-name" class="col-sm-2 control-label">Rule Name</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="rule-name" placeholder="Rule Name"/>
+                        </div>
+                        <textarea id="rule-content" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="panel-body">
+                        <button id="submit-rule" type="submit" class="btn btn-success pull-right">Submit</button>
+                        <button id="clear-rule" type="submit" class="btn btn-warning pull-right">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="rule-list" class="panel panel-primary">
+            <div class="panel-heading"><h3 class="panel-title">Current Rule Set</h3></div>
+            <div class="panel-body">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

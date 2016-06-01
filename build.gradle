@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.3.5.RELEASE"
+    }
+    ext {
+        droolsVersion = '6.4.0.Final'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'springboot-drools-demo'
+    version = '0.0.1'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://repository.jboss.org/nexus/content/groups/public-jboss'
+    }
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile "org.springframework.boot:spring-boot-starter-jetty"
+    compile "org.springframework.boot:spring-boot-starter-data-mongodb"
+    compile 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    compile 'org.springframework.boot:spring-boot-starter-security'
+
+    compile 'org.apache.commons:commons-lang3:3.4'
+    compile "commons-io:commons-io:2.5"
+
+    compile "org.kie:kie-api:$droolsVersion"
+    compile "org.kie:kie-internal:$droolsVersion"
+    compile "org.kie:kie-spring:$droolsVersion"
+    compile "org.drools:drools-core:$droolsVersion"
+    compile "org.drools:drools-compiler:$droolsVersion"
+
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile "junit:junit"
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}

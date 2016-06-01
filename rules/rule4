@@ -1,0 +1,8 @@
+package com.cx.jumpseat.rule 
+import com.cx.jumpseat.rule.JumpSeatRule;
+rule "weight" 
+when
+    $jsRule : JumpSeatRule(getBigDecimal("weight") == null || getBigDecimal("weight") >= 200.0) 
+then
+    $jsRule.setResult("weight", "weight not specified or weight > 200kg"); 
+end

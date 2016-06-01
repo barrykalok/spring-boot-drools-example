@@ -1,0 +1,8 @@
+package com.cx.jumpseat.rule
+import com.cx.jumpseat.rule.JumpSeatRule;
+rule "height" 
+when
+    $jsRule : JumpSeatRule(getBigDecimal("height") == null || getBigDecimal("height") >= 190.0) 
+then
+    $jsRule.setResult("height", "false"); 
+end

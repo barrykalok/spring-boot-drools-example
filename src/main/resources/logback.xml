@@ -1,0 +1,15 @@
+<configuration scan="true" scanPeriod="2 seconds">
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+    <!--<statusListener class="ch.qos.logback.core.status.OnConsoleStatusListener" />-->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+
+    <logger name="org.demo" level="TRACE"/>
+    <!--<logger name="org.springframework.web" level="DEBUG"/>-->
+
+    <logger name="org.springframework.ws.client.MessageTracing.sent" level="TRACE"/>
+    <logger name="org.springframework.ws.client.MessageTracing.received" level="TRACE"/>
+</configuration>

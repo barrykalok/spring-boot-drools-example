@@ -1,0 +1,8 @@
+package com.cx.jumpseat.rule
+import com.cx.jumpseat.rule.JumpSeatRule;
+rule "flight-attendant-training-1"
+when
+    $jsRule : JumpSeatRule(!getBoolean("flight-attendant-training-1"))
+then
+    $jsRule.setResult("flight-attendant-training-1", "false");
+end
