@@ -17,4 +17,5 @@ create db "demo"
 http://localhost:8080/demo
 
 you can drop the rules into the textarea
-you can find some sample rule under rules/*
+
+sample rule can find under rules/*
