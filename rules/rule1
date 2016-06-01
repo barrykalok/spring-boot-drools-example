@@ -1,8 +1,8 @@
-package com.cx.jumpseat.rule
-import com.cx.jumpseat.rule.JumpSeatRule;
-rule "flight-attendant-training-1"
+package org.demo.rule
+import org.demo.rule.RulePlaceholder;
+rule "height" 
 when
-    $jsRule : JumpSeatRule(!getBoolean("flight-attendant-training-1"))
+    $jsRule : RulePlaceholder(getBigDecimal("height") == null || getBigDecimal("height") >= 190.0) 
 then
-    $jsRule.setResult("flight-attendant-training-1", "false");
+    $jsRule.setResult("height", "false"); 
 end

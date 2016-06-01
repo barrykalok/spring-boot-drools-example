@@ -1,8 +1,8 @@
-package com.cx.jumpseat.rule
-import com.cx.jumpseat.rule.JumpSeatRule;
-rule "flight-attendant-training-2" 
+package org.demo.rule 
+import org.demo.rule.RulePlaceholder;
+rule "weight" 
 when
-    $jsRule : JumpSeatRule(!getBoolean("flight-attendant-training-2")) 
+    $jsRule : RulePlaceholder(getBigDecimal("weight") == null || getBigDecimal("weight") >= 200.0) 
 then
-    $jsRule.setResult("flight-attendant-training-2", "false");
+    $jsRule.setResult("weight", "weight not specified or weight > 200kg"); 
 end
